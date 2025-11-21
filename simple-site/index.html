@@ -9,11 +9,23 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header>
+    <div class="bg-effects" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <header class="glass-panel">
         <div class="container header-content">
             <a href="#" class="logo" onclick="loadTrending(); return false;">
-                <i data-lucide="film"></i>
-                <span>KinoFree</span>
+                <span class="logo-mark">
+                    <i data-lucide="film"></i>
+                    <span class="logo-initials">KF</span>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-title">KinoFree</span>
+                    <span class="logo-tagline">cinema portal</span>
+                </div>
             </a>
             <div class="search-bar">
                 <form id="searchForm">
@@ -24,11 +36,18 @@
         </div>
     </header>
 
-    <main class="container">
-        <h1 id="pageTitle">Популярное сейчас</h1>
-        <div id="moviesGrid" class="movies-grid">
-            <!-- Здесь будут фильмы -->
-            <div class="loading">Загрузка...</div>
+    <main class="main-wrapper">
+        <div class="container">
+            <section class="hero">
+                <p class="eyebrow">онлайн библиотека фильмов</p>
+                <h1 id="pageTitle">Популярное сейчас</h1>
+                <p class="hero-subtitle">Опережайте премьеры, вдохновляйтесь трейлерами и собирайте свой личный плейлист.</p>
+            </section>
+
+            <div id="moviesGrid" class="movies-grid">
+                <!-- Здесь будут фильмы -->
+                <div class="loading">Загрузка...</div>
+            </div>
         </div>
     </main>
 

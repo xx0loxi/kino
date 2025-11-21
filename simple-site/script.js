@@ -72,10 +72,11 @@ function renderMovies(movies) {
         return;
     }
 
-    movies.forEach(movie => {
+    movies.forEach((movie, index) => {
         const card = document.createElement('div');
         card.className = 'movie-card';
         card.onclick = () => showMovieDetails(movie.id);
+        card.style.setProperty('--delay', `${index * 60}ms`);
         
         const posterPath = movie.poster_path 
             ? `${IMAGE_BASE_URL}${movie.poster_path}` 

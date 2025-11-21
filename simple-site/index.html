@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinoFree - Простой HTML сайт</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем иконки для красоты -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo" onclick="loadTrending(); return false;">
+                <i data-lucide="film"></i>
+                <span>KinoFree</span>
+            </a>
+            <div class="search-bar">
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Поиск фильмов...">
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 id="pageTitle">Популярное сейчас</h1>
+        <div id="moviesGrid" class="movies-grid">
+            <!-- Здесь будут фильмы -->
+            <div class="loading">Загрузка...</div>
+        </div>
+    </main>
+
+    <!-- Модальное окно для деталей фильма -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalBody">
+                <!-- Контент модального окна -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Инициализация иконок
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
